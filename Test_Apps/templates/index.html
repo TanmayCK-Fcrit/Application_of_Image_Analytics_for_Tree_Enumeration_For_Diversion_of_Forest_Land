@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Enumeration - Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="index-page">
+    <div class="container">
+        <h1 class="title">🌳 Tree Enumeration for Forest Land Diversion</h1>
+        <p class="subtitle">Upload an image to detect, count, and classify trees automatically.</p>
+
+        <form action="/detection" method="POST" enctype="multipart/form-data" class="upload-form">
+            <input type="file" name="file" required>
+            <label>
+                <input type="checkbox" name="count_trees"> Enable Tree Counting
+            </label>
+            <button type="submit" class="btn">Upload & Process</button>
+        </form>
+        
+        <p class="note">Supported formats: JPG, PNG</p>
+    </div>
+</body>
+</html>

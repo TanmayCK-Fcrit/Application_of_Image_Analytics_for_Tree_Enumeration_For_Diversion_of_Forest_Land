@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Detection Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="detection-page">
+    <div class="container">
+        <h1 class="title">🌳 Tree Detection Results</h1>
+        <p class="subtitle">Total Trees Detected: <strong>{{ tree_count }}</strong></p>
+
+        <div class="detected-image-container">
+            <h2>Detected Image</h2>
+            <img src="{{ url_for('static', filename='detected/detected.jpg') }}" alt="Detected Trees" class="detected-image">
+        </div>
+
+        <div class="cropped-trees-container">
+            <h2>Cropped Tree Images</h2>
+            <div class="tree-grid">
+                {% for image in cropped_images %}
+                    <div class="tree-card">
+                        <img src="{{ url_for('static', filename='cropped/' + image) }}" alt="Cropped Tree">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="buttons">
+            <a href="{{ url_for('index') }}" class="btn">Upload Another Image</a>
+            <a href="{{ url_for('report') }}" class="btn">Generate Report</a>
+        </div>
+    </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="detection-page">
+
+    <div class="container">
+        <h1 class="title">Tree Detection</h1>
+        <p class="subtitle">Upload an image to detect trees</p>
+
+        <!-- File Upload Form -->
+        <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit" class="btn">Upload</button>
+        </form>
+
+        <!-- Display Uploaded Image -->
+        {% if uploaded_file %}
+        <h2>Uploaded Image:</h2>
+        <img src="{{ url_for('static', filename='uploads/' + uploaded_file) }}" alt="Uploaded Tree Image" class="tree-image">
+        {% endif %}
+    </div>
+    <div class="buttons">
+        <a href="{{ url_for('index') }}" class="btn">Upload Another Image</a>
+        <a href="{{ url_for('report') }}" class="btn">Generate Report</a>
+    </div>
+    <div class="cropped-trees-container">
+        <h2>Cropped Tree Images</h2>
+        <div class="tree-grid">
+            {% for image in cropped_images %}
+                <div class="tree-card">
+                    <img src="{{ url_for('static', filename='cropped/' + image) }}" alt="Cropped Tree">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="detected-image-container">
+        <h2>Detected Image</h2>
+        <img src="{{ url_for('static', filename='detected/detected.jpg') }}" alt="Detected Trees" class="detected-image">
+    </div>
+
+
+
+</body>
+</html>

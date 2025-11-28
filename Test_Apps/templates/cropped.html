@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cropped Images</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="cropped-page">
+    <div class="container">
+        <h1 class="title">🌿 Cropped & Rescaled Trees</h1>
+        <p class="subtitle">Below are the detected tree images, ready for classification.</p>
+
+        <div class="image-container">
+            {% for image in images %}
+                <div class="image-box">
+                    <img src="{{ url_for('static', filename='cropped/' + image) }}" class="tree-image">
+                    <p class="image-name">{{ image }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        <a href="{{ url_for('report') }}" class="btn">Generate Report</a>
+    </div>
+</body>
+</html>

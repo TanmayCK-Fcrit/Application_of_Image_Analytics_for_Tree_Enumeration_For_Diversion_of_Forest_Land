@@ -1,0 +1,188 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+/* Background Styling for Each Page */
+.index-page {
+    background: url("../images/bg_index.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+.cropped-page {
+    background: url("../images/bg_index.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+.report-page {
+    background: url("../images/bg_index.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+.detection-page {
+    background: url("../images/bg_detection.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+/* Container Styling */
+.container {
+    background: rgba(186, 232, 158, 0.7);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Titles & Text */
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #222;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Upload Form */
+.upload-form input {
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.upload-form .btn {
+    background: #007bff;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-form .btn:hover {
+    background: #0056b3;
+}
+
+/* Cropped Image Display */
+.image-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 15px;
+    margin-top: 20px;
+    white-space: nowrap;
+}
+
+.image-box {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+.tree-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+}
+
+/* Report Table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table-dark {
+    background: #333;
+    color: white;
+}
+
+.report-img {
+    width: 80px;
+    border-radius: 5px;
+}
+
+.species-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Detection Page Styles */
+.detected-image-container {
+    margin-top: 20px;
+}
+
+.detected-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cropped-trees-container {
+    margin-top: 30px;
+}
+
+.tree-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.tree-card {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.tree-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: #28a745;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #218838;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="report-page">
+
+    <div class="container">
+        <h1 class="title">Tree Classification Report</h1>
+        
+        {% if results %}
+        <table class="report-table">
+            <thead>
+                <tr>
+                    <th>Tree Number</th>
+                    <th>Image</th>
+                    <th>Pixel Coordinates</th>
+                    <th>Classified Species</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for image, data in results.items() %}
+                <tr>
+                    <td>{{ loop.index }}</td> <!-- Fix: Using loop.index -->
+                    <td><img src="{{ url_for('static', filename='cropped/' + image) }}" class="report-img"></td>
+                    <td>{{ data["coordinates"] }}</td>
+                    <td class="species-name">{{ data["species"] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <div class="download-section">
+            <a href="{{ url_for('download_pdf') }}" class="btn btn-download">Download Report (PDF)</a>
+        </div>
+        {% else %}
+        <p>No classification results available.</p>
+        {% endif %}
+        
+        <a href="{{ url_for('index') }}" class="btn btn-home">Go Back</a>
+    </div>
+
+</body>
+</html>
